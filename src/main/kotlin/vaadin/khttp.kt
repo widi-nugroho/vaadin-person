@@ -20,3 +20,9 @@ fun allPersonPressed(): MutableList<Person> {
 fun deletePressed(a:MutableMap<String,String>){
     var rdel=get("http://localhost:9000/deletePerson",params = a)
 }
+fun deleteMultiPressed(a:MutableSet<Person>){
+    for (i in a){
+        var mapnya= mutableMapOf("nama" to i.nama)
+        var rdelmulti=get("http://localhost:9000/deletePerson",params=mapnya)
+    }
+}
